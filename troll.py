@@ -1,20 +1,8 @@
-import requests
-import json
-from pprint import pprint
+from redditFunctions import *
 
-username = 'not_a_trollbot'
-password = 'trollbot'
+def main():
+    print 'the cake is a lie'
+    login('not_a_trollbot', 'trollbot')
 
-user_pass_dict = {'user': username, 
-                  'passwd': password, 
-                  'api_type': 'json' }
-
-headers = {'user-agent': '/u/TankorSmash\'s API python tutorial bot', }
-client = requests.session(headers=headers)
-r = client.post(r'http://www.reddit.com/api/login', data=user_pass_dict)
-j = json.loads(r.text)
-print j
-client.modhash = j['json']['data']['modhash']
-
-print '{USER}\'s modhash is: {mh}'.format(USER=username, mh=client.modhash)
-
+if __name__ == '__main__':
+        main()
