@@ -51,8 +51,3 @@ def subredditInfo(client, limit=25, sr='tankorsmash',sorting='', return_json=Fal
  
         return stories
  
-    client = login('USERNAME', 'PASSWORD')
- 
-    j = subredditInfo(client, limit=1)
- 
-    pp2(j)
