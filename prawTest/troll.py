@@ -1,5 +1,6 @@
 import praw
 from time import sleep
+import condescending
 
 def populateWordDict(dict):
     f = open("partsOfSpeech/nouns.txt", "r")
@@ -14,10 +15,9 @@ def populateWordDict(dict):
 def postReply(comments):
     already_done = []
     for comment in comments:
-        if "ironic" in str(comment.body):
-            comment.reply("Actually that isn't even ironic. It's just coincidental.")
-        elif "idea" in str(comment.body):
-            comment.reply("Wow. That's the stupidest idea I have ever heard!")
+		reply = condescending.generate_reply(str(comment.body))
+		if not reply == "":
+			comment.reply(reply)
         print comment.body
         print "\n"
 
