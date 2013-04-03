@@ -29,6 +29,9 @@ def postReply(comments):
         print "\n"
 
 def switch_accounts(current_acc):
+    """
+    Returns a different account than current_acc to be logged in
+    """
     new_acc = random.choice(__accounts)
     while not new_acc == current_acc:
         return new_acc, __passwords[new_acc]
