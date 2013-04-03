@@ -6,10 +6,6 @@ import random
 #List of accounts of our bots
 __accounts = ["repetition_is_key"]
 
-#Dictionary associating accounts with their respective passwords
-__passwords = {"repetition_is_key": repetition
-        }
-
 def populateWordDict(dict):
     f = open("partsOfSpeech/nouns.txt", "r")
     for line in f:
@@ -35,14 +31,14 @@ def switch_accounts(current_acc):
     """
     new_acc = random.choice(__accounts)
     while not new_acc == current_acc:
-        return new_acc, __passwords[new_acc]
+        return new_acc
 
 def main():
     USER = ""
     while True:
         r = praw.Reddit("Just for fun... :P")
-        USER, PASS = switch_accounts(USER)
-        r.login(USER, PASS)
+        USER = switch_accounts(USER)
+        r.login(USER, "repetition")
         while True:
             subreddit = r.get_subreddit('all')
             subreddit_comments = subreddit.get_comments()
