@@ -1,6 +1,7 @@
 import praw
 from time import sleep
 import condescending
+import random
 
 #List of accounts of our bots
 __accounts = ["repetition_is_key"]
