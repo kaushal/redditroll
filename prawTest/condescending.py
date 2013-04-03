@@ -24,7 +24,7 @@ def generate_reply(post):
         for preposition in prepositions():
             print preposition
             if preposition + "." in post or preposition + "?" in post or preposition + "!" in post:
-                message += "Dude. Are you really ending a sentence with a preposition? What are you in third grade?"
+                message += "Dude. Are you really ending a sentence with a preposition? I used to do that, and then " + random.choice(["my dad got a job.", "I turned 12."])
 
     if not message == "":
         message += "\nYou " + insulting_adjective() + " " + insulting_noun() + "!"
