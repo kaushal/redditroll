@@ -3,9 +3,9 @@ from random import choice
 
 def generate_reply(post):
 	"""
-	Runs through the logic of creating a comment to post as a reply to another post. 
-	If the post is not worth replying to, an empty string will be returned. 
-	
+	Runs through the logic of creating a comment to post as a reply to another post.
+	If the post is not worth replying to, an empty string will be returned.
+
 	Arguments:
 	post - The post that is potentially being replied to.
 	"""
@@ -26,7 +26,7 @@ def generate_reply(post):
 
 def insulting_adjective():
 	"""
-	Returns a random adjective from our list of offensive adjectives. 
+	Returns a random adjective from our list of offensive adjectives.
 	"""
 
 	try:
@@ -47,6 +47,3 @@ def insulting_noun():
 	except EnvironmentError:
 		print "Dude! Make a list of nouns!"
 		sys.exit()
-
-print generate_reply("I have an idea!")
-print generate_reply("That is so ironic!")
